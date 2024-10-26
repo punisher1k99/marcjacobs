@@ -1,0 +1,939 @@
+/* Keep only the necessary styles */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.home-page {
+    min-height: 100vh;
+    padding-top: 0; /* Remove padding-top */
+}
+
+/* Navbar styles */
+nav {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    position: absolute; /* Change from fixed to absolute */
+    width: 100%;
+    color: #fff;
+    padding: 1rem 0.5rem; /* Increased padding-top and padding-bottom */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icons a, .user-btn {
+    color: #fff;
+    margin-left: 1.5rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.user-menu {
+    position: relative;
+}
+
+.user-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.username-space {
+    width: 6px;
+}
+
+.user-dropdown {
+    display: none;
+    position: absolute;
+    /* right: 0; */
+    top: 100%;
+    background-color: #000;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+}
+
+.user-dropdown a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.user-dropdown a i {
+    color: white;
+    margin-right: 8px; /* Add space between icon and text */
+}
+
+/* Add this new rule to ensure the icon and text are on the same line */
+.user-dropdown a span {
+    display: inline-block;
+    margin-left: 8px; /* Add space between icon and text */
+}
+
+.user-dropdown a:hover {
+    background-color: #333; /* Changed hover color to dark grey */
+}
+
+.show {
+    display: block;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .brand {
+        margin-bottom: 0.5rem;
+    }
+
+    .nav-icons {
+        width: 100%;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .nav-icons a, .user-btn {
+        margin-left: 0;
+        font-size: 1rem;
+    }
+
+    .user-btn span#username {
+        display: none;
+    }
+
+    .username-space {
+        display: none;
+    }
+
+    .user-btn {
+        padding: 0.4rem;
+    }
+
+    .user-btn i {
+        /* margin-right: 0; */
+    }
+
+    .user-dropdown {
+        position: absolute;
+        top: 100%;
+        right: 10px; /* Adjust this value to move the dropdown more to the right */
+        left: auto;
+        transform: none;
+        min-width: 120px;
+    }
+
+    .user-sphere {
+        background-color: transparent; /* Remove background color */
+        padding: 0; /* Remove padding */
+        border-radius: 0; /* Remove border-radius */
+    }
+
+    .user-btn {
+        padding: 0; /* Remove padding */
+    }
+
+    .user-btn i {
+        margin-right: 0;
+        padding: 0; /* Remove padding */
+    }
+
+    .user-btn span {
+        display: none; /* Hide username text */
+    }
+
+    .user-sphere,
+    .user-btn.user-sphere {
+        background-color: transparent !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+    }
+
+    .user-btn {
+        padding: 0 !important;
+    }
+
+    .user-btn i {
+        margin-right: 0 !important;
+        padding: 0 !important;
+    }
+
+    .user-btn span#username,
+    .username-space {
+        display: none !important;
+    }
+
+    .user-dropdown a {
+        font-size: 0.8rem; /* Decrease font size for mobile */
+        padding: 10px 12px; /* Adjust padding for smaller text */
+    }
+
+    .user-dropdown a i {
+        font-size: 0.8rem;
+        margin-right: 6px; /* Slightly reduce space for mobile */
+    }
+
+    .user-dropdown a span {
+        margin-left: 6px; /* Slightly reduce space for mobile */
+    }
+
+    .nav-container .brand {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 10px; /* Increase space between brand and icons */
+    }
+
+    .content-container {
+        height: 50vh;
+        width: 100vw; /* Set width to full viewport width */
+        margin: 0; /* Remove any margin */
+        padding: 0; /* Remove any padding */
+        overflow: hidden; /* Hide any overflow */
+    }
+
+    #homepage-video {
+        width: 100%; /* Ensure video takes full width */
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* Adjust the body and html to remove any default margins */
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Other existing mobile styles... */
+
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .content-container {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .content-below-video {
+        left: 0;
+        right: 0;
+        margin-left: 20px;
+        margin-right: 20px;
+        width: auto;
+    }
+
+    /* Ensure all content is within the viewport width */
+    .scroll-content, 
+    nav, 
+    .nav-container, 
+    .content-container, 
+    #homepage-video, 
+    .content-below-video, 
+    .additional-content {
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+}
+
+/* ... new styles ... */
+
+.user-sphere {
+    background-color: #333333;
+    border-radius: 20px;
+    padding: 5.5px 10.5px; /* Increased padding by 0.5px on all sides */
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.user-sphere:hover {
+    background-color: #444444; /* Slightly lighter grey on hover, but still dark */
+}
+
+.user-sphere i {
+    margin-right: 8.5px; /* Increased right margin by 0.5px */
+    padding: 0.5px; /* Added padding to the icon */
+}
+
+.user-sphere span {
+    padding: 0.5px; /* Added padding to the username text */
+}
+
+/* Add these styles for the landing page */
+.landing-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.landing-page .container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 2rem;
+}
+
+.landing-page h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+}
+
+.explore-btn {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000;
+    color: #fff;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    font-weight: 700;
+    border: 2px solid #fff;
+    transform: scale(1);
+    text-decoration: none; /* Add this line to remove the underline */
+}
+
+.explore-btn:hover {
+    background-color: #fff;
+    color: #000;
+    border-color: #000;
+    transform: scale(1.02);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .landing-page h1 {
+        font-size: 3rem;
+    }
+
+    .explore-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* Login and Signup Pages */
+.login-page, .signup-page {
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Replace the existing #background-video styles with these */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    z-index: -1;
+}
+
+/* Update the login and signup container styles */
+.login-container, .signup-container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+
+.login-container form,
+.signup-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-container input,
+.signup-container input {
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    padding: 0.75rem 0;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 2px solid #000;
+    background-color: transparent;
+    color: #000;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.login-container input:focus,
+.signup-container input:focus {
+    border-bottom-color: #555;
+}
+
+.login-container .btn,
+.signup-container .btn,
+.login-container a.btn {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    border: 2px solid #000;
+    transition: all 0.3s ease;
+    transform: scale(1);
+    margin-top: 1rem;
+    box-sizing: border-box; /* Add this line */
+}
+
+.login-container .btn:hover,
+.signup-container .btn:hover,
+.login-container a.btn:hover {
+    background-color: #fff;
+    color: #000;
+    transform: scale(1.02);
+}
+
+.login-container a.btn {
+    margin-top: 1rem;
+    display: block; /* Change from inline-block to block */
+    width: 100%; /* Ensure it takes full width */
+}
+
+/* Add space between password field and login button */
+.login-container form input:last-of-type {
+    margin-bottom: 2rem;
+}
+
+/* Update the font for placeholders */
+.login-container input::placeholder,
+.signup-container input::placeholder {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Mobile view adjustments for login and signup pages */
+@media (max-width: 768px) {
+    .login-page, .signup-page {
+        align-items: flex-end; /* Align items to the bottom */
+        padding-bottom: 2rem; /* Add some padding at the bottom */
+    }
+
+    .login-container, .signup-container {
+        max-width: calc(100% - 40px); /* Make the container full width minus 40px for margins */
+        width: calc(100% - 40px); /* Ensure the width is calculated correctly */
+        margin-left: 20px; /* Add 20px margin on the left */
+        margin-right: 20px; /* Add 20px margin on the right */
+        border-radius: 0; /* Remove border radius */
+        padding-bottom: 3rem; /* Add extra padding at the bottom */
+    }
+
+    /* Adjust the video positioning for mobile */
+    #background-video {
+        object-position: center top; /* Focus on the top part of the video */
+    }
+}
+
+/* Video container styles */
+.content-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+#homepage-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+/* Content below video styles */
+.content-below-video {
+    position: absolute;
+    bottom: 270px; /* Add this line to create top margin */
+    left: 270px;
+    right: 270px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1rem 2rem;
+    text-align: center;
+    width: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+    height: auto; /* Change from fixed height to auto */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: hidden;
+}
+
+.content-below-video h2 {
+    font-size: 2.5rem;
+    margin-top: 0.5rem; /* Add some top margin */
+    margin-bottom: 0.5rem;
+}
+
+.content-below-video p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.shop-now-btn {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tote-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 0.5rem;
+    display: block;
+}
+
+/* Media query for mobile view */
+@media (max-width: 768px) {
+    .content-below-video {
+        bottom: 0; /* Reset bottom position for mobile */
+        left: 0;
+        right: 0;
+        height: 40%; /* Keep the percentage height for mobile */
+        margin: 0;
+        padding: 1rem;
+    }
+}
+
+/* Remove the following styles from your CSS file */
+
+/* Tote image container styles */
+.tote-image-container {
+    max-width: calc(100% - 540px);
+    margin-left: 270px;
+    margin-right: 270px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.tote-image {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Add these styles at the end of your CSS file */
+
+/* Customizing the scrollbar */
+/*
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+*/
+
+/* Modify these styles to hide the scrollbar */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-y: auto;
+}
+
+.home-page {
+    min-height: 100vh;
+    padding-top: 0;
+}
+
+.content-container {
+    height: 100vh;
+    position: relative;
+}
+
+.content-below-video {
+    position: absolute;
+    bottom: 0;
+    left: 270px;
+    right: 270px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1rem 2rem;
+    text-align: center;
+    box-sizing: border-box;
+    height: 30%;
+}
+
+.additional-content {
+    padding: 2rem;
+    text-align: center;
+    background-color: #fff; /* Add a background color */
+    position: relative; /* Ensure it's above the video */
+    z-index: 2; /* Higher than the video container */
+}
+
+.additional-content h2 {
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #000; /* Ensure text color is visible */
+}
+
+.additional-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #000; /* Ensure text color is visible */
+}
+
+.additional-content .shop-now-btn {
+    /* This button will inherit styles from the existing .shop-now-btn class */
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    display: inline-block; /* Change to inline-block */
+}
+
+.tote-image {
+    max-width: 70%;
+    height: auto;
+    display: block;
+    margin: 30px auto; /* Adjust margin as needed */
+}
+
+/* Remove any styles related to .scroll-content */
+
+/* Add this to your existing CSS file */
+
+@media (max-width: 768px) {
+    .content-below-video {
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: center;
+    }
+
+    .content-below-video h2,
+    .content-below-video p,
+    .content-below-video .shop-now-btn {
+        /* width: 100%; */
+        text-align: center;
+    }
+
+    .content-below-video .shop-now-btn {
+        display: block; /* Change from inline-block to block */
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content; /* Adjust width to fit content */
+    }
+}
+
+/* Add this to your existing mobile media query or create a new one if it doesn't exist */
+@media (max-width: 768px) {
+    .content-below-video h2 {
+        font-size: 1.8rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .content-below-video p {
+        font-size: 0.9rem; /* Slightly smaller font size for mobile */
+        line-height: 1.4; /* Adjusted line height for better readability */
+        white-space: normal; /* Allow text to wrap naturally */
+        overflow: visible; /* Show all text */
+        text-overflow: clip; /* Don't use ellipsis */
+    }
+
+    .content-below-video p br {
+        display: none; /* Remove line breaks on mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    .content-container {
+        position: relative;
+        height: 100vh;
+    }
+
+    .content-below-video {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.8);
+        margin: 0;
+        padding: 1rem;
+        height: 50%; /* This makes it overlay 50% of the video */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow-y: auto; /* In case content is too long */
+    }
+
+    #homepage-video {
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* Add this media query to maintain full width on mobile */
+@media (max-width: 768px) {
+    .shop-now-btn {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+.tote-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    display: block;
+}
+
+.shop-now-btn {
+    /* Remove all styles for normal view */
+}
+
+@media (max-width: 768px) {
+    .shop-now-btn {
+        display: inline-block;
+        background-color: #000;
+        color: #fff;
+        padding: 10px 10px;
+        font-size: 0.9rem;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+        border: 2px solid #000;
+        transition: all 0.3s ease;
+        transform: scale(1);
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-family: 'Montserrat', sans-serif;
+        width: auto;
+        white-space: nowrap;
+        max-width: 100%;
+    }
+
+    .shop-now-btn:hover {
+        background-color: #fff;
+        color: #000;
+        transform: scale(1.02);
+    }
+}
+
+.additional-content {
+    padding: 2rem;
+    text-align: center;
+}
+
+.tote-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.scroll-content {
+    min-height: 100vh; /* Changed from 150vh to 100vh */
+}
+
+/* Remove this if it exists */
+/*
+.home-page {
+    overflow: hidden;
+}
+*/
+
+.shop-now-btn {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000;
+    color: #fff;
+    width: 150px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    text-align: center;
+    display: block; /* Change from inline-block to block */
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    border: 2px solid #000;
+    transition: all 0.3s ease;
+    transform: scale(1);
+    margin: 1rem auto; /* Change margin to auto for horizontal centering */
+    box-sizing: border-box;
+}
+
+.shop-now-btn:hover {
+    background-color: #fff;
+    color: #000;
+    transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+    .shop-now-btn {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.tote-image {
+    max-width: 70%; /* Reduce the max-width to 70% of its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 150px auto 150px; /* Top margin 150px, auto for left/right, 150px for bottom */
+}
+
+@media (max-width: 768px) {
+    .tote-image {
+        max-width: 100%; /* Full width for mobile view */
+        margin-top: 30px;
+        margin-bottom: 150px; /* Keep the 150px bottom margin for mobile */
+    }
+}
+
+.additional-content h2 {
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.additional-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.additional-content .shop-now-btn {
+    /* This button will inherit styles from the existing .shop-now-btn class */
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .additional-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .additional-content p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Replace this CSS */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    z-index: -1;
+}
+
+/* With the original CSS for the background video */
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    object-fit: cover;
+}

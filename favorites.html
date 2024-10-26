@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorites - MARC JACOBS</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body class="favorites-page">
+    <nav>
+        <div class="nav-container">
+            <div class="brand">MARC JACOBS</div>
+            <div class="nav-icons">
+                <a href="home.html" class="home-icon"><i class="fas fa-home"></i></a>
+                <a href="favorites.html" class="heart-icon"><i class="fas fa-heart"></i></a>
+                <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                <div class="user-menu">
+                    <button id="userButton" class="btn user-btn user-sphere">
+                        <i class="fas fa-user"></i>
+                        <span class="username-space"></span>
+                        <span id="username">User</span>
+                    </button>
+                    <div id="userDropdown" class="user-dropdown">
+                        <a href="#" id="signOutButton"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <h1>Your Favorites</h1>
+    <div id="favorite-items">
+        <!-- Favorite items will be dynamically added here -->
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
