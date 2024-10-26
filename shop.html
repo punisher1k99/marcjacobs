@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - MARC JACOBS</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body class="shop-page">
+    <nav>
+        <div class="nav-container">
+            <div class="brand">MARC JACOBS</div>
+            <div class="nav-icons">
+                <a href="home.html" class="home-icon"><i class="fas fa-home"></i></a>
+                <a href="favorites.html" class="heart-icon"><i class="fas fa-heart"></i></a>
+                <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                <div class="user-menu">
+                    <button id="userButton" class="btn user-btn user-sphere">
+                        <i class="fas fa-user"></i>
+                        <span class="username-space"></span>
+                        <span id="username">User</span>
+                    </button>
+                    <div id="userDropdown" class="user-dropdown">
+                        <a href="#" id="signOutButton"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="shop-content">
+        <h1>Shop Our Products</h1>
+        <div class="product-grid">
+            <div class="product-card" data-id="1" data-name="THE LEATHER LARGE TOTE BAG" data-price="595.00" data-image="assets/images/large-tote.jpg">
+                <div class="product-image-container">
+                    <img src="assets/images/tote-bag.webp"" alt="THE LEATHER LARGE TOTE BAG" class="product-image">
+                    <button class="btn add-to-favorites-btn"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <h3>THE LEATHER LARGE TOTE BAG</h3>
+                    <p class="price">$595.00</p>
+                    <div class="color-options">
+                        <span class="color-option" style="background-color: #f0f0f0;"></span>
+                        <span class="color-option" style="background-color: #000000;"></span>
+                        <span class="color-option" style="background-color: #8B4513;"></span>
+                        <span class="more-colors">+5</span>
+                    </div>
+                    <button class="btn shop-add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="2" data-name="THE LEATHER MEDIUM TOTE BAG" data-price="450.00" data-image="assets/images/medium-tote.jpg">
+                <div class="product-image-container">
+                    <img src="assets/images/sackbag.webp" alt="THE LEATHER MEDIUM TOTE BAG" class="product-image">
+                    <button class="btn add-to-favorites-btn"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <h3>THE LEATHER MEDIUM TOTE BAG</h3>
+                    <p class="price">$450.00</p>
+                    <div class="color-options">
+                        <span class="color-option" style="background-color: #000000;"></span>
+                        <span class="color-option" style="background-color: #8B4513;"></span>
+                        <span class="color-option" style="background-color: #4B0082;"></span>
+                        <span class="more-colors">+9</span>
+                    </div>
+                    <button class="btn shop-add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="3" data-name="THE LEATHER SMALL TOTE BAG" data-price="395.00" data-image="assets/images/small-tote.jpg">
+                <div class="product-image-container">
+                    <img src="assets/images/minibag.webp" alt="THE LEATHER SMALL TOTE BAG" class="product-image">
+                    <button class="btn add-to-favorites-btn"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <h3>THE LEATHER SMALL TOTE BAG</h3>
+                    <p class="price">$395.00</p>
+                    <div class="color-options">
+                        <span class="color-option" style="background-color: #8B4513;"></span>
+                        <span class="color-option" style="background-color: #000000;"></span>
+                        <span class="color-option" style="background-color: #f0f0f0;"></span>
+                        <span class="more-colors">+10</span>
+                    </div>
+                    <button class="btn shop-add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="4" data-name="THE SNAPSHOT" data-price="325.00" data-image="assets/images/snapshot.jpg">
+                <div class="product-image-container">
+                    <img src="assets/images/snapshotbag.webp" alt="THE SNAPSHOT" class="product-image">
+                    <button class="btn add-to-favorites-btn"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <h3>THE SNAPSHOT</h3>
+                    <p class="price">$325.00</p>
+                    <div class="color-options">
+                        <span class="color-option" style="background-color: #000000;"></span>
+                        <span class="color-option" style="background-color: #FF0000;"></span>
+                        <span class="color-option" style="background-color: #FFFFFF;"></span>
+                        <span class="more-colors">+7</span>
+                    </div>
+                    <button class="btn shop-add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="5" data-name="THE J MARC SHOULDER BAG" data-price="495.00" data-image="assets/images/j-marc.jpg">
+                <div class="product-image-container">
+                    <img src="assets/images/sneakers.webp" alt="THE J MARC SHOULDER BAG" class="product-image">
+                    <button class="btn add-to-favorites-btn"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <h3>THE J MARC SHOULDER BAG</h3>
+                    <p class="price">$495.00</p>
+                    <div class="color-options">
+                        <span class="color-option" style="background-color: #000000;"></span>
+                        <span class="color-option" style="background-color: #8B4513;"></span>
+                        <span class="color-option" style="background-color: #FFFFFF;"></span>
+                        <span class="more-colors">+4</span>
+                    </div>
+                    <button class="btn shop-add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="6" data-name="THE TRAVELER TOTE" data-price="275.00" data-image="assets/images/traveler-tote.jpg">
+                <div class="product-image-container">
+                    <img src="assets/images/bikerbag.webp" alt="THE TRAVELER TOTE" class="product-image">
+                    <button class="btn add-to-favorites-btn"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <h3>THE TRAVELER TOTE</h3>
+                    <p class="price">$275.00</p>
+                    <div class="color-options">
+                        <span class="color-option" style="background-color: #000000;"></span>
+                        <span class="color-option" style="background-color: #8B4513;"></span>
+                        <span class="color-option" style="background-color: #4B0082;"></span>
+                        <span class="more-colors">+6</span>
+                    </div>
+                    <button class="btn shop-add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add this before the closing </body> tag -->
+    <div id="notification" class="notification">
+        <p id="notification-message"></p>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

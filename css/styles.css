@@ -654,39 +654,67 @@ body {
 .additional-content {
     padding: 2rem;
     text-align: center;
-    background-color: #fff; /* Add a background color */
-    position: relative; /* Ensure it's above the video */
-    z-index: 2; /* Higher than the video container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.additional-content h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    margin-top: 5rem; /* Increased from 1rem to 5rem to add more space above */
+    font-weight: bold;
+}
+
+.additional-content .tote-image {
+    max-width: 70%;
+    height: auto;
+    display: block;
+    margin: 0 auto 150px;
 }
 
 .additional-content h2 {
     font-size: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    color: #000; /* Ensure text color is visible */
+    margin-bottom: 1.5rem; /* Even spacing after headings */
 }
 
 .additional-content p {
     font-size: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem; /* Even spacing after paragraphs */
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    color: #000; /* Ensure text color is visible */
 }
 
 .additional-content .shop-now-btn {
-    /* This button will inherit styles from the existing .shop-now-btn class */
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    display: inline-block; /* Change to inline-block */
+    margin-bottom: 5rem; /* Larger spacing after buttons to separate product sections */
 }
 
-.tote-image {
-    max-width: 70%;
-    height: auto;
-    display: block;
-    margin: 30px auto; /* Adjust margin as needed */
+/* Last button doesn't need bottom margin */
+.additional-content .shop-now-btn:last-child {
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .additional-content .tote-image {
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .additional-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .additional-content p {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .additional-content .shop-now-btn {
+        margin-bottom: 4rem;
+    }
 }
 
 /* Remove any styles related to .scroll-content */
@@ -937,3 +965,668 @@ body {
     z-index: -1;
     object-fit: cover;
 }
+
+/* Add these styles at the end of your CSS file */
+.shop-page {
+    padding-top: 80px; /* Adjust based on your navbar height */
+}
+
+.shop-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.shop-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* 1:1 Aspect Ratio */
+    overflow: hidden;
+}
+
+.product-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.add-to-favorites-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 1;
+    transition: transform 0.2s ease;
+}
+
+.add-to-favorites-btn i {
+    font-size: 24px;
+    color: #fff;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    transition: color 0.2s ease;
+}
+
+.add-to-favorites-btn:hover {
+    transform: scale(1.1);
+}
+
+.add-to-favorites-btn:hover i {
+    color: #ff4136;
+}
+
+.add-to-favorites-btn.active i {
+    color: #ff4136;
+}
+
+.product-info {
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 150px; /* Add minimum height to ensure consistent spacing */
+}
+
+.product-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: normal;
+}
+
+.price {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.color-options {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+}
+
+.color-option {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+}
+
+.more-colors {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.cart-page {
+    padding-top: 80px; /* Adjust based on your navbar height */
+}
+
+.cart-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.cart-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.cart-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.cart-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.cart-item:hover {
+    transform: translateY(-5px);
+}
+
+.cart-item-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.cart-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.cart-item-price {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.remove-from-cart-btn {
+    background-color: #ff4136;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-from-cart-btn:hover {
+    background-color: #dc352d;
+}
+
+.cart-summary {
+    margin-top: 2rem;
+    text-align: right;
+    padding: 1rem;
+}
+
+.cart-summary h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.cart-summary p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 1rem; /* Add space between buttons */
+}
+
+.remove-all-btn {
+    background-color: #ff4136;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-all-btn:hover {
+    background-color: #dc352d;
+}
+
+.checkout-btn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background-color: #333;
+}
+
+.cart-icon {
+    position: relative;
+}
+
+.cart-icon[data-count]:after {
+    content: attr(data-count);
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 5px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cart-icon.has-items[data-count]:after {
+    opacity: 1;
+}
+
+.product-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Change from center to stretch */
+    margin-top: 1rem;
+}
+
+.add-to-cart-btn {
+    flex-grow: 1;
+    margin-right: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-to-favorites-btn {
+    background-color: transparent;
+    color: #000;
+    /* border: 1px solid #000; */
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* Set a fixed width */
+}
+
+.add-to-favorites-btn:hover {
+    /* background-color: #000; */
+    color: #fff;
+}
+
+.add-to-favorites-btn.active {
+    /* background-color: #ff4136; */
+    color: #fff;
+    border-color: #ff4136;
+}
+
+.favorites-page {
+    padding-top: 80px; /* Adjust based on your navbar height */
+}
+
+.favorites-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.favorites-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.favorite-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.favorite-item:hover {
+    transform: translateY(-5px);
+}
+
+.favorite-item-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.favorite-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.favorite-item-price {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.favorite-item-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.favorite-item-buttons .btn {
+    flex: 1;
+    margin: 0 0.25rem;
+}
+
+.remove-from-favorites-btn,
+.add-to-cart-btn {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-from-favorites-btn {
+    background-color: #ff4136;
+    color: #fff;
+}
+
+.remove-from-favorites-btn:hover {
+    background-color: #dc352d;
+}
+
+.add-to-cart-btn {
+    background-color: #000;
+    color: #fff;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #333;
+}
+
+.favorites-summary {
+    margin-top: 2rem;
+    text-align: right;
+    padding: 1rem;
+}
+
+.favorites-actions {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 1rem; /* Add space between buttons */
+}
+
+.remove-all-favorites-btn {
+    background-color: #ff4136;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-all-favorites-btn:hover {
+    background-color: #dc352d;
+}
+
+.add-all-to-cart-btn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-all-to-cart-btn:hover {
+    background-color: #333;
+}
+
+.heart-icon {
+    position: relative;
+}
+
+.heart-icon[data-count]:after {
+    content: attr(data-count);
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 5px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.heart-icon.has-items[data-count]:after {
+    opacity: 1;
+}
+
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: -250px;
+    background-color: white;
+    color: black;
+    padding: 10px 15px;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: right 0.5s ease-in-out;
+    z-index: 1000;
+    font-size: 0.9rem;
+    max-width: 200px;
+    border: 1px solid #e0e0e0;
+}
+
+.notification.show {
+    right: 20px;
+}
+
+#notification-message {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.price-cart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+}
+
+.price-cart-container .price {
+    margin-bottom: 0;
+}
+
+.price-cart-container  {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 6px 10px; /* Reduced padding */
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+    margin-left: auto; /* Push button to the right */
+    white-space: nowrap; /* Prevent text wrapping */
+    min-width: fit-content; /* Allow button to shrink to content */
+}
+
+.price-cart-container .add-to-cart-btn:hover {
+    background-color: #333;
+}
+
+.color-options {
+    margin-bottom: 3rem; /* Add space above the price-cart-container */
+}
+
+.shop-add-to-cart-btn {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.shop-add-to-cart-btn:hover {
+    background-color: #333;
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin-top: 10px;
+    z-index: 1000;
+}
+
+.search-dropdown.show {
+    display: block;
+}
+
+.search-input-container {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+}
+
+#searchInput:focus {
+    border-color: #000;
+}
+
+.search-results {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.search-result-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.search-result-item:hover {
+    background-color: #f5f5f5;
+}
+
+.search-result-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.search-result-info {
+    flex-grow: 1;
+}
+
+.search-result-info h4 {
+    margin: 0;
+    font-size: 14px;
+}
+
+.search-result-info p {
+    margin: 5px 0 0;
+    font-size: 12px;
+    color: #666;
+}
+
+.no-results {
+    padding: 20px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+
+.additional-content h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    margin-top: 5rem; /* Increased from 1rem to 5rem to add more space above */
+    font-weight: bold;
+}
+
+.tote-image {
+    max-width: 70%;
+    height: auto;
+    display: block;
+    margin: 0 auto 150px;
+}
+
+@media (max-width: 768px) {
+    .additional-content h1 {
+        margin-top: 3rem; /* Slightly less space on mobile */
+    }
+    
+    .tote-image {
+        max-width: 100%;
+        margin-top: 0;
+        margin-bottom: 150px;
+    }
+}
+
